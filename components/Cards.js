@@ -24,15 +24,17 @@ import axios from "axios"
 axios
     .get('https://lambda-times-api.herokuapp.com/articles')
     .then((res) =>{
+        console.log(res.data.articles.javascript[0])
         // console.log(cardMaker(res.data))
-        console.log(res)
+        // const result = res.data
+        // console.log(result)
     })
     .catch((fuzz) => {
         console.log(fuzz)
     })
 
-    
-function cardMaker(article){
+   
+function cardMaker(articleObj){
     
     const card = document.createElement('div');
     const headline = document.createElement('div');
